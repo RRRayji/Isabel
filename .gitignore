@@ -1,1 +1,4 @@
-src/models
+source/models
+node_modules
+*.json
+*.psd

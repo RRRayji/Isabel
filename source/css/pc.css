@@ -1,0 +1,7 @@
+header{
+	height: 3svh;
+	max-height: 150px;
+}
+button{
+	cursor: pointer;
+}

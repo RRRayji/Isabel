@@ -1,0 +1,41 @@
+header{
+	margin: 0 0 5px;
+}
+img{
+	max-height: 75%;
+}
+header, nav{
+	justify-content: space-around;
+	height: 6svh;
+	max-height: 50px;
+	width: 97.5svw;
+}
+header:first-child{
+	padding-left: 10px;
+	justify-content: start;
+}
+nav{
+	display: inline-flex;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+nav > button{
+	width: 25svw;
+	height: inherit;
+	max-height: 100%;
+	border: none;
+}
+nav > button > img{
+	max-height: 45%;
+}
+section{
+	overflow: hidden;
+}
+.sectionName{
+	display:flex;
+}
+.sectionContent{
+	width: 100svw;
+}

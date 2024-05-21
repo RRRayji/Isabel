@@ -1,0 +1,60 @@
+:root{
+	--card-h: 200px;
+}
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 19px;
+}
+::-webkit-scrollbar{
+	width: 1svw;
+	max-width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-track{
+	background-color: #06070d1c;
+}
+::-webkit-scrollbar-track-piece{
+	background-color: #06070d1c;
+}
+::-webkit-scrollbar-thumb{
+	height: 50px; background-color: #596066; border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover{
+	background-color: rgba(89, 96, 102, .7);
+}
+::-webkit-scrollbar-corner{
+	background-color: #06070d1c;
+}
+::-webkit-resizer{
+	background-color: #596066;
+}
+header, section{
+	background-color: rgba(128, 128, 128, 0.5);
+}
+section{
+	padding: 0 10px;
+	margin-bottom: 5px;
+}
+header, .sectionContent{
+	display: inline-flex;
+	align-items: center;
+	justify-content: start;
+}
+.sectionName{
+	margin-top: 5px;
+}
+.sectionContent{
+	overflow: hidden;
+	overflow-x: scroll;
+}
+.card{
+	height: var(--card-h);
+	min-width: calc(var(--card-h) * 2/3);
+	margin: 5px 10px 5px 0;
+	background-color: rgba(203, 220, 226, 0.685);
+}
+.card:last-child{
+	margin-right: 0px;
+}

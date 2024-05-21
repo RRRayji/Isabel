@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/RRRayji/Isabel/issues"
   },
-  "homepage": "https://github.com/RRRayji/Isabel#readme"
+  "homepage": "https://github.com/RRRayji/Isabel#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.11"
+  }
 }
