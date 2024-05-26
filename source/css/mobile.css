@@ -1,14 +1,17 @@
-header{
-	margin: 0 0 5px;
+body{
+	background-color: #a4b1e6;
 }
-img{
+header{
+	justify-content: flex-end;
+	width: calc(100svw - 10px);
+	box-shadow: 0 10px 10px #8f9cd4;
+}
+header > button > img{
 	max-height: 75%;
 }
 header, nav{
-	justify-content: space-around;
 	height: 6svh;
 	max-height: 50px;
-	width: 97.5svw;
 }
 header:first-child{
 	padding-left: 10px;
@@ -16,25 +19,37 @@ header:first-child{
 }
 nav{
 	display: inline-flex;
+	justify-content: space-around;
 	align-items: center;
 	position: fixed;
-	bottom: 0;
-	width: 100%;
+	left: 0.5svw;
+	bottom: 0.5svw;
+	width: 99svw;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 14px 28px #8f9cd4, 0 10px 10px #8f9cd4;
 }
 nav > button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 25svw;
 	height: inherit;
 	max-height: 100%;
 	border: none;
+	background: none;
 }
 nav > button > img{
+	align-self: center;
 	max-height: 45%;
 }
 section{
 	overflow: hidden;
+	margin-top: 20px;
+	box-shadow: 1px 10px 10px #8f9cd4;
 }
 .sectionName{
-	display:flex;
+	display: flex;
 }
 .sectionContent{
 	width: 100svw;

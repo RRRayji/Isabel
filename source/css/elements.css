@@ -1,22 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap");
 :root{
-	--card-h: 200px;
+	--item-h: 200px;
 }
 *{
 	margin: 0;
 	padding: 0;
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	font-size: 19px;
+	font-family: "Inter", sans-serif;
+	font-size: 18px;
 }
 ::-webkit-scrollbar{
 	width: 1svw;
 	max-width: 8px;
 	height: 8px;
-}
-::-webkit-scrollbar-track{
-	background-color: #06070d1c;
-}
-::-webkit-scrollbar-track-piece{
-	background-color: #06070d1c;
 }
 ::-webkit-scrollbar-thumb{
 	height: 50px; background-color: #596066; border-radius: 3px;
@@ -30,8 +25,13 @@
 ::-webkit-resizer{
 	background-color: #596066;
 }
-header, section{
-	background-color: rgba(128, 128, 128, 0.5);
+.homeButton{
+	height: 100%;
+	background: none;
+	border: none;
+}
+header, nav, section{
+	background-color: white;
 }
 section{
 	padding: 0 10px;
@@ -48,13 +48,19 @@ header, .sectionContent{
 .sectionContent{
 	overflow: hidden;
 	overflow-x: scroll;
+	padding: 5px 0;
 }
-.card{
-	height: var(--card-h);
-	min-width: calc(var(--card-h) * 2/3);
-	margin: 5px 10px 5px 0;
-	background-color: rgba(203, 220, 226, 0.685);
+.item{
+	height: var(--item-h);
+	min-width: calc(var(--item-h) * 2/3);
+	margin-right: 10px;
+	background-color: rgba(203, 220, 226, 0.7);
 }
-.card:last-child{
+.item:last-child{
 	margin-right: 0px;
+}
+.item > img{
+	height: 60%;
+	width: 90%;
+	background-color:chocolate;
 }
