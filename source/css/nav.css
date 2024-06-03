@@ -1,22 +1,3 @@
-body{
-	background-color: #a4b1e6;
-}
-header{
-	justify-content: flex-end;
-	width: calc(100svw - 10px);
-	box-shadow: 0 10px 10px #8f9cd4;
-}
-header > button > img{
-	max-height: 75%;
-}
-header, nav{
-	height: 6svh;
-	max-height: 50px;
-}
-header:first-child{
-	padding-left: 10px;
-	justify-content: start;
-}
 nav{
 	display: inline-flex;
 	justify-content: space-around;
@@ -24,10 +5,12 @@ nav{
 	position: fixed;
 	left: 0.5svw;
 	bottom: 0.5svw;
+	height: 36px;
 	width: 99svw;
 	border-radius: 15px;
 	overflow: hidden;
 	box-shadow: 0 14px 28px #8f9cd4, 0 10px 10px #8f9cd4;
+	background-color: white;
 }
 nav > button{
 	display: flex;
@@ -43,14 +26,22 @@ nav > button > img{
 	align-self: center;
 	max-height: 45%;
 }
-section{
-	overflow: hidden;
-	margin-top: 20px;
-	box-shadow: 1px 10px 10px #8f9cd4;
-}
-.sectionName{
-	display: flex;
-}
-.sectionContent{
-	width: 100svw;
+@media (min-width: 768px) {
+	nav{
+		max-width: 330px;
+		display: flex;
+		position: relative;
+		border-radius: 0;
+		box-shadow: none;
+		background: none;
+		left: 0;
+		bottom: 0;
+		overflow: hidden;
+	}
+	nav > button{
+		width: 25%;
+	}
+	nav > button > img{
+		max-height: 63%;
+	}
 }

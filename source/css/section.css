@@ -1,0 +1,57 @@
+section{
+	overflow: hidden;
+	padding: 0;
+	padding-left: 10px;
+	margin: 20px 0;
+	box-shadow: 1px 10px 10px #8f9cd4;
+	background-color: white;
+}
+.sectionName{
+	display: flex;
+	font-weight: bold;
+	margin-top: 5px;
+	padding-right: 10px;
+}
+.sectionContent{
+	overflow-x: scroll;
+	padding-top: 5px;
+}
+.sectionScroller{
+	display: inline-flex;
+	align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+	overflow: hidden;
+}
+.item{
+	height: max-content;
+	max-height: var(--item-h);
+	width: calc(var(--item-h) * 1.8/3);
+	margin-right: 10px;
+	/* background-color: rgba(203, 220, 226, 0.7); */
+	/* border: 1px solid rgb(71, 88, 94); */
+	overflow: hidden;
+}
+.item:last-child{
+	margin-right: 10px;
+}
+.item > img{
+	display: inline-flex;
+	border-radius: 10px;
+	height: calc(var(--item-h) * 0.7);
+	width: 100%;
+	background-color:rgba(140, 183, 196, 0.466);
+	object-fit: cover;
+}
+.item > p{
+	font-size: 14px;
+    display: -webkit-inline-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+    overflow: hidden;
+}
+@media (min-width: 768px){
+	section{
+		border-radius: 5px;
+	}
+}

@@ -1,0 +1,24 @@
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 42px;
+	width: 100%;
+	padding-left: 10px;
+	box-shadow: 0 10px 10px #8f9cd4;
+	background-color: white;
+}
+.homeButton > img{
+	max-height: 75%;
+}
+.homeButton{
+	height: 100%;
+	background: none;
+	border: none;
+}
+@media (min-width: 768px){
+	header{
+		max-height: 150px;
+		border-radius: 0 0 5px 5px;
+	}
+}

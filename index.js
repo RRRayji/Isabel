@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-app.set("views", "./source/templates");
+app.set("views", "./source");
 app.set("view engine", "ejs");
 app.engine('ejs', require('ejs').__express);
 app.use(express.static(__dirname + '/source'));
