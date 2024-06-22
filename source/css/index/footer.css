@@ -1,0 +1,34 @@
+footer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 42px;
+	height: max-content;
+	width: 100%;
+	margin: 20px 0 calc(56px + 0.5svw);
+	padding: 0 10px;
+	box-shadow: 0 10px 10px #8f9cd4;
+	background-color: white;
+    flex-direction: column;
+    justify-content: center;
+}
+footer > div{
+	display: flex;
+	width: 100%;
+	margin-top: 5px;
+}
+footer > div:last-child{
+	margin: 5px 0 5px;
+}
+footer > div > p:first-child{
+	margin-right: auto;
+}
+footer > div:last-child > p{
+	font-size: 19px;
+}
+@media (min-width: 768px){
+	footer{
+		border-radius: 5px 5px 0 0;
+		margin: 20px 0 0;
+	}
+}

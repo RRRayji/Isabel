@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Isabel – Catalog</title>
+	<link rel="icon" type="image/ico" href="/sprite/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/css/index/index.css">
+	<link rel="stylesheet" type="text/css" href="css/catalog.css">
+</head>
+<body>
+	<%- include('modules/header'); -%>
+	<%- include('modules/sorts'); -%>
+
+	<section class="categories">
+		<p class="sectionName">📋Catalog</p>
+		<div class="sectionContent">
+			<div class="sectionScroller">
+				<% catalog.forEach(function(item){ %>
+					<a class="item" href="/item?id=<%=item.article%>">
+						<img src="<%=item.media%>" alt="Picture">
+						<p class="price">€<%=item.price%></p><br>
+						<p class="itemName"><%=item.title%></p>
+					</a>
+				<% }); %>
+			</div>
+		</div>
+	</section>
+
+	<%- include('modules/footer'); -%>
+	<script src="js/sorts.js"></script>
+	
+</body>
+</html>

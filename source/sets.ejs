@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/settings.css">
+	<title>Isabel – User Settings</title>
+</head>
+<body>
+	<%- include('modules/header'); -%>
+	
+	<main>
+		<form id="setts" method="post">
+			<p>Account Settings</p>
+			<p class="notLogged">(You are not logged in)</p>
+			<input class="field" type="email" id="email" name="email" placeholder="email: <%=sets.email%>">
+			<input class="field" type="password" minlength="8" maxlength="16" name="pass1" id="pass1" onchange="isEqual()" placeholder="new pass">
+			<input class="field" type="password" minlength="8" maxlength="16" name="pass2" id="pass2" onchange="isEqual()" placeholder="repeat new pass">
+			<input class="field" type="text" name="surname" placeholder="surname: <%=sets.surname%>">
+			<input class="field" type="text" name="name" placeholder="name: <%=sets.name%>">
+			<input class="field" type="tel" name="phone" placeholder="phone: <%=sets.phone_number%>">
+			<textarea class="field" type="address" name="address" placeholder="address: <%=sets.address%>"></textarea>
+			<button class="field sub" type="submit" onclick="buttonSubmit()">Change</button>
+		</form>
+		<form id="exitForm" method="post">
+			<button class="field exit" type="submit" name="exit" value="true">Sign out</button>
+			<% if (b) { %><a href="/orders" class="field exit ords">Admin: Orders</a><%}%>
+		</form>
+	</main>
+	<script src="js/equivalence.js">
+		if (!document.querySelector("#email").placeholder.toString().includes('@'))
+		{
+			document.querySelector(".notLogged").style.display = 'block';
+			let fls = document.querySelectorAll(".field");
+			fls.forEach(fl => {
+				fl.disabled = "true";
+			});
+		}
+		function buttonSubmit()
+		{
+			if (pf1.value != pf2.value) alert('Password fields are not equal');
+		}
+	</script>
+</body>
+</html>

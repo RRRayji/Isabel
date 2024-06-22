@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Isabel – Orders</title>
+	<link rel="icon" type="image/ico" href="/sprite/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/css/index/index.css">
+	<link rel="stylesheet" href="/css/item/cart.css">
+	<link rel="stylesheet" href="/css/orders.css">
+</head>
+<body>
+	<%- include('modules/header') -%>
+
+	<section class="cart">
+		<p class="sectionName">🛒Orders</p>
+		<div class="sectionContent">
+			<form class="sectionScroller" method="post">
+				<% catalog.forEach(function(item){ %>
+					<div class="item">
+						<a class="item" href="/item?id=<%=item.accessory_id%>">
+							<img src="<%=item.media%>" alt="Picture">
+						</a>
+						<div class="info">
+							<div class="scroller">
+								<div class="remdiv">
+									<button class="remove" name="remove" value='{"number":<%=item.number%>,"email":"<%=item.user_email%>"}' type="submit">✖</button>
+								</div>
+								<p class="itemName"><%=item.title%></p>
+								<p class="price">€<%=(item.price * item.count).toFixed(2)%></p>
+								<p>in count of <%=item.count%></p>
+								<div class="counter">
+									<p>ordered by:</p>
+									<p><%=item.user_email%></p>
+									<p><%=item.phone_number%></p>
+									<p><b>Surname:</b> <%=item.surname%></p>
+									<p><b>Name:</b> <%=item.name%></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				<% }); %>
+			</form>
+		</div>
+	</section>
+
+	<%- include('modules/footer') -%>
+</body>
+</html>

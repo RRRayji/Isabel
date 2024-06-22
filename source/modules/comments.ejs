@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="css/item/comments.css">
+<form class="commentBlock" method="post">
+	<p class="cbTitle">📫Comments</p>
+	<% if (user.email) { %>
+		<div class="newcom">
+			<input type="hidden" name="item" value="<%=item.article%>">
+			<input type="hidden" name="usersurname" value="<%=user.surname%>">
+			<input type="hidden" name="username" value="<%=user.name%>">
+			<textarea name="newcom" class="ta"></textarea>
+			<button type="submit" class="addComment" onclick="AddNew()"><p>Send</p></button>
+		</div>
+	<% } %>
+	<% if (comments[item.article]) {%>
+		<% let len = Object.keys(comments[item.article]).length; %>
+		<% for(let i = len - 1; i >= 0; --i) { %>
+			<div class="comment">
+				<p class="comName"><%=comments[item.article][Object.keys(comments[item.article])[i]].surname%> <%=comments[item.article][Object.keys(comments[item.article])[i]].username%></p>
+				<p class="comText">– <%=comments[item.article][Object.keys(comments[item.article])[i]].text%></p>
+			</div>
+		 <% } %>
+	<% } else { %>
+		<div class="comment"><p class="nocoms">There are no comments for this item yet.<br>You can be the first!</p></div>
+	<% } %>
+</form>

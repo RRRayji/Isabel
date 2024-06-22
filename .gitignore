@@ -1,4 +1,4 @@
-source/models
 node_modules
 *.json
-*.psd
+!comments.json
+.vscode

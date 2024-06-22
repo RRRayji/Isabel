@@ -1,0 +1,98 @@
+nav{
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	left: 0.5svw;
+	bottom: 0.5svw;
+	height: 36px;
+	width: 99svw;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 14px 28px #8f9cd4, 0 10px 10px #8f9cd4;
+	background-color: white;
+}
+nav > button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 20svw;
+    max-width: 25svw;
+	height: inherit;
+	max-height: 100%;
+	border: none;
+	background: none;
+}
+nav > button > a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: inherit;
+	height: inherit;
+}
+nav > button > img{
+	align-self: center;
+	max-height: 45%;
+}
+nav > button > a > img{
+	align-self: center;
+	max-height: 60%;
+}
+@media (min-width: 768px) {
+	nav{
+		max-width: 330px;
+		display: flex;
+		position: relative;
+		border-radius: 0;
+		box-shadow: none;
+		background: none;
+		left: 0;
+		bottom: 0;
+		overflow: hidden;
+	}
+	nav > button{
+		min-width: 60px;
+		width: 25%;
+	}
+	nav > button > img{
+		max-height: 63%;
+	}
+}
+.searchOverlay{
+	display: none;
+    justify-content: center;
+	position: absolute;
+	overflow: hidden;
+	margin-top: 80px;
+	float: left;
+	height: 36px;
+	width: 100%;
+	left: 0;
+}
+.searchField{
+	display: flex;
+    justify-content: flex-end;
+	height: 100%;
+	width: 40%;
+	background-color: white;
+	box-shadow: 0 0 10px #8f9cd4;
+	border: 1px solid #06070d;
+	border-radius: 10px;
+}
+.search{
+	min-width: 200px;
+	width: 85%;
+	padding: 0 8px 0 10px;
+	border: 0;
+	border-radius: 10px;
+}
+.searchButton{
+	min-width: 70px;
+	width: 15%;
+	border: 0;
+	background-color: #a4b1e63b;
+}
+.searchButton > p{
+	font-size: 17px;
+	font-weight: 430;
+}

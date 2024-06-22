@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/item/item.css">
+	<title><%=item.title%></title>
+	<style>
+		.mainView{
+			background-image: url("<%=item.media[0]%>");
+		}
+		<% for (let ni = 0; ni < item.media.length; ++ni) { %>
+			#img<%=ni%>{
+				background-image: url("<%=item.media[ni]%>");
+			}
+		<% } %>
+	</style>
+</head>
+<body>
+	<%- include('modules/header'); -%>
+
+	<div class="bg">
+		<div class="images">
+			<div class="mainView">
+				<!-- arrows -->
+			</div>
+			<div class="imageSet">
+				<% for (let nj = 0; nj < item.media.length; ++nj) { %>
+					<button class="imgs" id="img<%=nj%>" onclick="setImg('<%=item.media[nj]%>')">
+				<% } %>
+			</div>
+		</div>
+		<div class="info">
+			<p class="title"><%=item.title%></p>
+			<p class="price">€<%=item.price%><button class="buy" onclick="DisplaySettings();"><p>Buy</p></button></p>
+			<p class="description"><%=item.description%></p>
+			<%- include('modules/comments'); -%>
+		</div>
+	</div>
+	<div class="settings">
+		<form method="post">
+			<input type="hidden" name="id" value="<%=item.article%>">
+			<button class="close" type="button" onclick="HideSettings()"><svg width="20" height="20" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41421 -0.000151038L0 1.41406L21.2132 22.6273L22.6274 21.2131L1.41421 -0.000151038Z" fill="#000000"></path><path d="M22.6291 1.41421L21.2148 0L0.00164068 21.2132L1.41585 22.6274L22.6291 1.41421Z" fill="#000000"></path></svg></button>
+			<p id="sum">€<%=item.price%></p>
+			<input type="number" name="count" id="count" min="1" max="10" placeholder="number of items" onchange="recalc(value)" value="1">
+			<button class="sub" type="submit"><p>Buy</p></button>
+		</form>
+	</div>
+	<script src="js/item.js"></script>
+</body>
+</html>

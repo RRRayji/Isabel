@@ -2,58 +2,37 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Isabel – Hand-made accessories in Italy</title>
-	<link rel="icon" type="image/ico" href="/sprites/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="icon" type="image/ico" href="/sprite/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/css/index/index.css">
 </head>
 <body>
-	<header>
-		<button class="homeButton"><img src="/sprites/png/Isabel.png" alt="Isabel" ></button>
-		
-		<nav>
-			<button>
-				<img src="/sprites/png/SearchButton.png" alt="Search">
-			</button>
-			<button>
-				<img src="/sprites/png/CartButton.png" alt="Cart">
-			</button>
-			<button>
-				<img src="/sprites/png/HomeButton.png" alt="Home">
-			</button>
-			<button>
-				<img src="/sprites/png/AccountButton.png" alt="Account">
-			</button>
-			<button>
-				<img src="/sprites/png/SettingsButton.png" alt="Settings">
-			</button>
-		</nav>
-	</header>
+	<%- include('modules/header'); -%>
 
 	<section class="categories">
 		<p class="sectionName">Categories</p>
 		<div class="sectionContent">
 			<div class="sectionScroller">
-				<div class="item">
-					<img src="pictures/ring1-1.jpg" alt="Picture">
+				<a class="item" href="/catalog" id="catalog">
+					<img src="picture/catalog.jpg" alt="Picture">
+					<p class="itemName">📋Catalog</p>
+				</a>
+				<a class="item" href="/rings">
+					<img src="picture/ring1-1.jpg" alt="Picture">
 					<p class="itemName">💍Rings</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/earrings1-1.jpg" alt="Picture">
+				</a>
+				<a class="item" href="/earrings">
+					<img src="/picture/earrings1-1.jpg" alt="Picture">
 					<p class="itemName">🎊Earrings</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/necklace1-1.jpg" alt="Picture">
-					<p class="itemName">📿Necklaces</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/bracelets.jpg" alt="Picture">
+				</a>
+				<a class="item" href="/pendants">
+					<img src="/picture/pendant1-1.jpg" alt="Picture">
+					<p class="itemName">📿Pendants</p>
+				</a>
+				<a class="item" href="/bracelets">
+					<img src="/picture/bracelet1-1.jpg" alt="Picture">
 					<p class="itemName">💫Bracelets</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/pendants.jpg" alt="Picture">
-					<p class="itemName">🎀Pendants</p>
-				</div>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -62,41 +41,13 @@
 		<p class="sectionName">💍Rings</p>
 		<div class="sectionContent">
 			<div class="sectionScroller">
-				<div class="item">
-					<img src="pictures/ring1-1.jpg" alt="Picture">
-					<p class="price">€24.99</p>
-					<p class="itemName">Ring 'Scarlet sunset'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/ring2-1.jpg" alt="Picture">
-					<p class="price">€23.79</p>
-					<p class="itemName">Ring 'Blue Sky'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/ring3-1.jpg" alt="Picture">
-					<p class="price">€28.39</p>
-					<p class="itemName">Ring 'Endless Love'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/ring4-1.jpg" alt="Picture">
-					<p class="price">€24.89</p>
-					<p class="itemName">Ring 'Northern lights'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/ring5-1.jpg" alt="Picture">
-					<p class="price">€19.43</p>
-					<p class="itemName">Ring 'Ice'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/ring6-1.jpg" alt="Picture">
-					<p class="price">€25.56</p>
-					<p class="itemName">Ring 'Forest spirit'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/ring7-1.jpg" alt="Picture">
-					<p class="price">€25.56</p>
-					<p class="itemName">Ring 'Norway Lights'</p>
-				</div>
+				<% catalog[0].forEach(function(rings){ %>
+					<a class="item" href="/item?id=<%=rings.article%>,count=10">
+						<img src="<%=rings.media%>" alt="Picture">
+						<p class="price">€<%=rings.price%></p><br>
+						<p class="itemName"><%=rings.title%></p>
+					</a>
+				<% }); %>
 			</div>
 		</div>
 	</section>
@@ -105,50 +56,47 @@
 		<p class="sectionName">🎊Earrings</p>
 		<div class="sectionContent">
 			<div class="sectionScroller">
-				<div class="item">
-					<img src="pictures/earrings1-1.jpg" alt="Picture">
-					<p class="price">€33.75</p>
-					<p class="itemName">Earrings 'Lotus'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/earrings2-1.jpg" alt="Picture">
-					<p class="price">€31.7</p>
-					<p class="itemName">Earrings 'Norway Lights'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/earrings3-1.jpg" alt="Picture">
-					<p class="price">€31.7</p>
-					<p class="itemName">Earrings 'Ancient patterns'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/earrings4-1.jpg" alt="Picture">
-					<p class="price">€33.75</p>
-					<p class="itemName">Earrings 'Cornflower'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/earrings5-1.jpg" alt="Picture">
-					<p class="price">€33.75</p>
-					<p class="itemName">Earrings 'Black and white'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/earrings6-1.jpg" alt="Picture">
-					<p class="price">€31.7</p>
-					<p class="itemName">Earrings 'Avatar'</p>
-				</div>
-				<div class="item">
-					<img src="/pictures/earrings7-1.jpg" alt="Picture">
-					<p class="price">€33.75</p>
-					<p class="itemName">Earrings 'Fern'</p>
-				</div>
+				<% catalog[1].forEach(function(rings){ %>
+					<a class="item" href="/item?id=<%=rings.article%>">
+						<img src="<%=rings.media%>" alt="Picture">
+						<p class="price">€<%=rings.price%></p><br>
+						<p class="itemName"><%=rings.title%></p>
+					</a>
+				<% }); %>
 			</div>
 		</div>
 	</section>
 
-	<!-- 📿Necklace -->
+	<section class="earrings">
+		<p class="sectionName">📿Pendants</p>
+		<div class="sectionContent">
+			<div class="sectionScroller">
+				<% catalog[2].forEach(function(rings){ %>
+					<a class="item" href="/item?id=<%=rings.article%>">
+						<img src="<%=rings.media%>" alt="Picture">
+						<p class="price">€<%=rings.price%></p><br>
+						<p class="itemName"><%=rings.title%></p>
+					</a>
+				<% }); %>
+			</div>
+		</div>
+	</section>
 
-	<footer>
-		<p>Isabel – Hand-made accessories in Italy</p>
-		<p>All rights reserved. © 2024</p>
-	</footer>
+	<section class="bracelets">
+		<p class="sectionName">💫Bracelets</p>
+		<div class="sectionContent">
+			<div class="sectionScroller">
+				<% catalog[3].forEach(function(rings){ %>
+					<a class="item" href="/item?id=<%=rings.article%>">
+						<img src="<%=rings.media%>" alt="Picture">
+						<p class="price">€<%=rings.price%></p><br>
+						<p class="itemName"><%=rings.title%></p>
+					</a>
+				<% }); %>
+			</div>
+		</div>
+	</section>
+
+	<%- include('modules/footer') -%>
 </body>
 </html>

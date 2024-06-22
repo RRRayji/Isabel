@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Isabel – Cart</title>
+	<link rel="icon" type="image/ico" href="/sprite/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/css/index/index.css">
+	<link rel="stylesheet" href="/css/item/cart.css">
+</head>
+<body>
+	<%- include('modules/header'); -%>
+	
+	<section class="cart">
+		<p class="sectionName">🛒Cart</p>
+		<div class="sectionContent">
+			<form class="sectionScroller" method="post">
+				<% catalog.forEach(function(item){ %>
+					<div class="item">
+						<a class="item" href="/item?id=<%=item.accessory_id%>">
+							<img src="<%=item.media%>" alt="Picture">
+						</a>
+						<div class="info">
+							<div class="remdiv">
+								<button class="remove" name="remove" value="<%=item.accessory_id%>" type="submit">✖</button>
+							</div>
+							<p class="itemName"><%=item.title%></p>
+							<p class="price">€<%=(item.price * item.count).toFixed(2)%></p>
+							<div class="counter">
+								<p>in count of&#160</p>
+								<input type="number" value="<%=item.count%>" onchange="recalc({'id':<%=item.accessory_id%>, 'price' : <%=item.price%>, 'value':value})" class="count" placeholder="number of" min="1" max="10">
+							</div>
+							<button class="changeButton" name="count" value='{"id":<%=item.accessory_id%>,"count":1}' type="submit"><p>Change</p></button>
+						</div>
+					</div>
+				<% }); %>
+			</form>
+		</div>
+	</section>
+	<script>
+		let items = document.querySelectorAll('div.item');
+		
+		//id	item.querySelector("a.item").getAttribute("href").toString().replace(/[^0-9]/gi, '');
+		//price		item.querySelector(".price").innerHTML.replace(/[^0-9\.]/gi, '')
+
+		function recalc(data)
+		{
+			items.forEach((item) => {
+				if (item.querySelector("a.item").getAttribute("href").toString().replace(/[^0-9]/gi, '') == data.id)
+				{
+					item.querySelector('button.changeButton').value = `{"id":${data.id},"count":${data.value}}`;
+					item.querySelector(".price").innerHTML = `€${(data.price * data.value).toFixed(2)}`;
+				}
+			});
+		}
+	</script>
+	<%- include('modules/footer'); -%>
+</body>
+</html>

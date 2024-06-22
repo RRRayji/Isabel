@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="css/reg-login/login.css">
+</head>
+<body>
+	<div id="result" style="display:none;"><%=result.isok%></div>
+	<form method="post">
+		<a class="homeButton" href="/"><img src="/sprite/png/Isabel.png" alt="Isabel" ></a>
+		<p>Login</p>
+		<input type="email" id="email" name="email" required placeholder="email" value="<%=result.currUser.email%>">
+		<input type="password" minlength="8" maxlength="16" name="pass" required placeholder="pass" value="<%=result.currUser.pass%>">
+		<input type="submit" class="sub" value="Sign in">
+		<p>Have no account? <a href="/reg">Registration</a></p>
+	</form>
+	<script>
+		document.querySelector(`#email`).focus();
+		if (document.querySelector('#result').innerHTML == "0") {alert('Account does not exists!');}
+	</script>
+</body>
+</html>

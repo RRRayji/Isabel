@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration</title>
+	<link rel="stylesheet" href="css/reg-login/reg.css">
+</head>
+<body>
+	<form method="post">
+		<a class="homeButton" href="/"><img src="/sprite/png/Isabel.png" alt="Isabel" ></a>
+		<p>Registration</p>
+		<input type="email" id="email" name="email" required placeholder="email">
+		<input type="password" minlength="8" maxlength="16" name="pass" id="pass1" onchange="isEqual()" required placeholder="pass">
+		<input type="password" minlength="8" maxlength="16" name="confirmPass" id="pass2" onchange="isEqual()" required placeholder="confirm pass">
+		<input type="text" name="surname" placeholder="surname">
+		<input type="text" name="name" placeholder="name">
+		<input type="tel" name="phone" placeholder="phone">
+		<input type="address" name="address" placeholder="address">
+		<input type="submit" class="sub" value="Register">
+		<p>Have an account? <a href="/login">Login</a></p>
+	</form>
+	<script src="js/equivalence.js"></script>
+</body>
+</html>
