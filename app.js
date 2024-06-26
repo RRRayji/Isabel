@@ -1,4 +1,4 @@
-const DEBUG = true;
+const DEBUG = false;
 const fs = require('fs');
 const express = require("express");
 const bodyParser = require('body-parser');
@@ -216,7 +216,9 @@ app.get('/orders', (req, res) => {
 });
 app.post('/orders', (req, res) => {
     let arr = JSON.parse(req.body.remove.toString());
-    let q = `DELETE FROM orders WHERE user_email='${arr.email.replace(/[^0-9A-z@_.]/gi, '')}' AND number='${arr.number.replace(/[^0-9]/gi, '')}'`;
+    if (DEBUG)
+        console.log(arr);
+    let q = `DELETE FROM orders WHERE user_email='${arr.email.replace(/[^0-9A-z@_.]/gi, '')}' AND number='${arr.number.toString().replace(/[^0-9]/gi, '')}'`;
     connection.query(q, (error, results, fields) => {
         if (error)
             throw error;
